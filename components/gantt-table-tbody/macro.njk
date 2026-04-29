@@ -1,8 +1,8 @@
 {#
-  TableHead macro — the <thead> of a table.
+  TableBody macro — the <tbody> of a table.
 
-  HTML tag: <thead>
-  CSS class: table-head
+  HTML tag: <tbody>
+  CSS class: table-body
 
   Params:
     id          string   Element id.
@@ -13,15 +13,15 @@
 
   Usage: see Table.
 #}
-{%- macro ganttTableHead(params) -%}
+{%- macro ganttTableTbody(params) -%}
 {%- set p = params | default({}) -%}
-<thead
-  class="gantt-table-head{% if p.classes %} {{ p.classes }}{% endif %}"
+<tbody
+  class="gantt-table-tbody{% if p.classes %} {{ p.classes }}{% endif %}"
   {%- if p.id %} id="{{ p.id }}"{% endif %}
   {%- if p.attributes %}{% for k, v in p.attributes %} {{ k }}="{{ v }}"{% endfor %}{% endif %}
 >
   {%- if p.html -%}{{ p.html | safe }}
   {%- elif caller -%}{{ caller() }}
   {%- endif -%}
-</thead>
+</tbody>
 {%- endmacro -%}
