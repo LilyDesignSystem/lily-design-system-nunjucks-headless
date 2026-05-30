@@ -1,7 +1,7 @@
-{# Comment macro — a comment is anything that expresses an opinion, observation, explanation, etc. #}
-{%- macro comment(params) -%}
+{# Question macro — a question is anything that asks for information, invites a response, tests knowledge, etc. #}
+{%- macro question(params) -%}
 <div
-  class="comment{% if params.classes %} {{ params.classes }}{% endif %}"
+  class="question{% if params.classes %} {{ params.classes }}{% endif %}"
   {%- if params.label %} aria-label="{{ params.label }}"{% endif %}
 >
   {%- if params.html -%}{{ params.html | safe }}

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 
 const html = `<div
-  class="comment"
+  class="question"
 ></div>`;
 
 const meta = {
-  title: 'Headless/Comment',
+  title: 'Headless/Question',
   render: () => html,
   tags: ['autodocs']
 } satisfies Meta;

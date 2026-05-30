@@ -1,8 +1,8 @@
 {#
-  QrCode macro — a QR code image generated from text or URL data.
+  QrCodeImage macro — a QR code image generated from text or URL data.
 
   HTML tag: <img>
-  CSS class: qr-code
+  CSS class: qr-code-image
   Accessibility: the alt text should describe the QR code's purpose.
 
   Params:
@@ -13,10 +13,10 @@
     classes     string
     attributes  object
 #}
-{%- macro qrCode(params) -%}
+{%- macro qrCodeImage(params) -%}
 {%- set p = params | default({}) -%}
 <img
-  class="qr-code{% if p.classes %} {{ p.classes }}{% endif %}"
+  class="qr-code-image{% if p.classes %} {{ p.classes }}{% endif %}"
   src="{{ p.src }}"
   alt="{{ p.alt | default('QR code') }}"
   {%- if p.size %} width="{{ p.size }}" height="{{ p.size }}"{% endif %}
