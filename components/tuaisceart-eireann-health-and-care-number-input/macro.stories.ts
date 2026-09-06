@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 
 const html = `<input
-  class="ireland-individual-health-identifier-input"
+  class="tuaisceart-eireann-health-and-care-number-input"
   type="text"
   id=""
   name=""
   value=""
   inputmode="numeric"
-  pattern="[0-9 \\-]{7,9}"
-  maxlength="9"
+  pattern="[0-9 \\-]{10,13}"
+  maxlength="13"
   autocomplete="off"
   spellcheck="false">`;
 
 const meta = {
-  title: 'Headless/IrelandIndividualHealthIdentifierInput',
+  title: 'Headless/TuaisceartEireannHealthAndCareNumberInput',
   render: () => html,
   tags: ['autodocs']
 } satisfies Meta;

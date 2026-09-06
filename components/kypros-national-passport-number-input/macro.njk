@@ -1,9 +1,9 @@
 {#
-  CyprusNationalPassportNumberInput macro — an input for entering Cyprus's
+  KyprosNationalPassportNumberInput macro — an input for entering Kypros's
     National Passport Number.
 
   HTML tag: <input type="text">
-  CSS class: cyprus-national-passport-number-input
+  CSS class: kypros-national-passport-number-input
   Format: passports before 13/12/2010 begin with 'E' followed by 6 digits (e.g. E123456); biometric passports issued after 13/12/2010 begin with 'K' followed by 8 digits (e.g. K12345678)
   Accessibility: autocomplete="off", spellcheck suppressed.
 
@@ -12,12 +12,12 @@
     required, disabled, readonly, classes, attributes.
 
   Usage:
-    {% from "components/cyprus-national-passport-number-input/macro.njk" import cyprusNationalPassportNumberInput %}
-    {{ cyprusNationalPassportNumberInput({ id: "field-id", label: "National Passport Number" }) }}
+    {% from "components/kypros-national-passport-number-input/macro.njk" import kyprosNationalPassportNumberInput %}
+    {{ kyprosNationalPassportNumberInput({ id: "field-id", label: "National Passport Number" }) }}
 #}
-{%- macro cyprusNationalPassportNumberInput(params) -%}
+{%- macro kyprosNationalPassportNumberInput(params) -%}
 <input
-  class="cyprus-national-passport-number-input{% if params.classes %} {{ params.classes }}{% endif %}"
+  class="kypros-national-passport-number-input{% if params.classes %} {{ params.classes }}{% endif %}"
   type="text"
   id="{{ params.id }}"
   name="{{ params.name | default(params.id) }}"

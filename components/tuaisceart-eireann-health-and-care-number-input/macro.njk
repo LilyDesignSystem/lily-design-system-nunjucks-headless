@@ -1,10 +1,11 @@
 {#
-  IrelandIndividualHealthIdentifierInput macro — an input for
-    entering an Ireland Individual Health Identifier (IHI).
+  TuaisceartEireannHealthAndCareNumberInput macro — an input for
+    entering a Tuaisceart Eireann Health and Care (H&C) Number.
 
   HTML tag: <input type="text">
-  CSS class: ireland-individual-health-identifier-input
-  Format: seven digits, conventionally grouped "XXXX XXX".
+  CSS class: tuaisceart-eireann-health-and-care-number-input
+  Format: ten digits, canonically grouped "XXX XXX XXXX" (same
+    format as the NHS Number used in the rest of the UK).
   Accessibility: inputmode="numeric", autocomplete="off",
     spellcheck suppressed.
 
@@ -13,19 +14,19 @@
     required, disabled, readonly, classes, attributes.
 
   Usage:
-    {% from "components/ireland-individual-health-identifier-input/macro.njk" import irelandIndividualHealthIdentifierInput %}
-    {{ irelandIndividualHealthIdentifierInput({ id: "ihi" }) }}
+    {% from "components/tuaisceart-eireann-health-and-care-number-input/macro.njk" import tuaisceartEireannHealthAndCareNumberInput %}
+    {{ tuaisceartEireannHealthAndCareNumberInput({ id: "hc" }) }}
 #}
-{%- macro irelandIndividualHealthIdentifierInput(params) -%}
+{%- macro tuaisceartEireannHealthAndCareNumberInput(params) -%}
 <input
-  class="ireland-individual-health-identifier-input{% if params.classes %} {{ params.classes }}{% endif %}"
+  class="tuaisceart-eireann-health-and-care-number-input{% if params.classes %} {{ params.classes }}{% endif %}"
   type="text"
   id="{{ params.id }}"
   name="{{ params.name | default(params.id) }}"
   value="{{ params.value | default('') }}"
   inputmode="numeric"
-  pattern="[0-9 \-]{7,9}"
-  maxlength="9"
+  pattern="[0-9 \-]{10,13}"
+  maxlength="13"
   autocomplete="off"
   spellcheck="false"
   {%- if params.label %} aria-label="{{ params.label }}"{% endif %}

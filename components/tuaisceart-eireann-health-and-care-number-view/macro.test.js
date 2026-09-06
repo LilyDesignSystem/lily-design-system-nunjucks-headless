@@ -1,38 +1,38 @@
 import { describe, it, expect } from "vitest";
 import { render } from "../../test/render.js";
 
-describe("ireland-individual-health-identifier-view", () => {
+describe("tuaisceart-eireann-health-and-care-number-view", () => {
   it("renders a <span> with the base class", () => {
     const { document } = render(
-      "ireland-individual-health-identifier-view",
-      { value: "1234567" },
+      "tuaisceart-eireann-health-and-care-number-view",
+      { value: "4857773456" },
     );
     expect(document.querySelector(
-      "span.ireland-individual-health-identifier-view",
+      "span.tuaisceart-eireann-health-and-care-number-view",
     )).toBeTruthy();
   });
 
-  it("groups 7 raw digits as 'XXXX XXX'", () => {
+  it("groups 10 raw digits as 'XXX XXX XXXX'", () => {
     const { document } = render(
-      "ireland-individual-health-identifier-view",
-      { value: "1234567" },
+      "tuaisceart-eireann-health-and-care-number-view",
+      { value: "4857773456" },
     );
     expect(document.querySelector("span").textContent.trim())
-      .toBe("1234 567");
+      .toBe("485 777 3456");
   });
 
   it("accepts embedded hyphens and regroups", () => {
     const { document } = render(
-      "ireland-individual-health-identifier-view",
-      { value: "1234-567" },
+      "tuaisceart-eireann-health-and-care-number-view",
+      { value: "485-777-3456" },
     );
     expect(document.querySelector("span").textContent.trim())
-      .toBe("1234 567");
+      .toBe("485 777 3456");
   });
 
-  it("renders non-7-digit values as-is", () => {
+  it("renders non-10-digit values as-is", () => {
     const { document } = render(
-      "ireland-individual-health-identifier-view",
+      "tuaisceart-eireann-health-and-care-number-view",
       { value: "pending" },
     );
     expect(document.querySelector("span").textContent.trim()).toBe("pending");
@@ -40,17 +40,17 @@ describe("ireland-individual-health-identifier-view", () => {
 
   it("sets aria-label from params.label", () => {
     const { document } = render(
-      "ireland-individual-health-identifier-view",
-      { value: "1234567", label: "IHI" },
+      "tuaisceart-eireann-health-and-care-number-view",
+      { value: "4857773456", label: "H&C number" },
     );
     expect(document.querySelector("span").getAttribute("aria-label"))
-      .toBe("IHI");
+      .toBe("H&C number");
   });
 
   it("contains no <style> or <script> tags", () => {
     const { html } = render(
-      "ireland-individual-health-identifier-view",
-      { value: "1234567" },
+      "tuaisceart-eireann-health-and-care-number-view",
+      { value: "4857773456" },
     );
     expect(html).not.toContain("<style");
     expect(html).not.toContain("<script");

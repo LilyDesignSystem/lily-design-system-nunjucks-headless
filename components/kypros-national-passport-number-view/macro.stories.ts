@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 
 const html = `<span
-  class="northern-ireland-health-and-care-number-view"></span>`;
+  class="kypros-national-passport-number-view"
+  aria-label="National Passport Number">sample-value</span>`;
 
 const meta = {
-  title: 'Headless/NorthernIrelandHealthAndCareNumberView',
+  title: 'Headless/KyprosNationalPassportNumberView',
   render: () => html,
   tags: ['autodocs']
 } satisfies Meta;

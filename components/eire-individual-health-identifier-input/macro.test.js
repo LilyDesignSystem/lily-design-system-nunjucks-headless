@@ -1,22 +1,22 @@
 import { describe, it, expect } from "vitest";
 import { render } from "../../test/render.js";
 
-describe("ireland-individual-health-identifier-input", () => {
+describe("eire-individual-health-identifier-input", () => {
   it("renders an <input type=text> with the base class", () => {
     const { document } = render(
-      "ireland-individual-health-identifier-input",
+      "eire-individual-health-identifier-input",
       { id: "ihi" },
     );
     const el = document.querySelector("input");
     expect(el.getAttribute("type")).toBe("text");
     expect(el.classList.contains(
-      "ireland-individual-health-identifier-input",
+      "eire-individual-health-identifier-input",
     )).toBe(true);
   });
 
   it("sets inputmode=numeric and autocomplete=off", () => {
     const { document } = render(
-      "ireland-individual-health-identifier-input",
+      "eire-individual-health-identifier-input",
       { id: "ihi" },
     );
     const el = document.querySelector("input");
@@ -26,7 +26,7 @@ describe("ireland-individual-health-identifier-input", () => {
 
   it("renders value", () => {
     const { document } = render(
-      "ireland-individual-health-identifier-input",
+      "eire-individual-health-identifier-input",
       { id: "ihi", value: "1234 567" },
     );
     expect(document.querySelector("input").getAttribute("value"))
@@ -35,7 +35,7 @@ describe("ireland-individual-health-identifier-input", () => {
 
   it("supports aria-invalid and aria-errormessage", () => {
     const { document } = render(
-      "ireland-individual-health-identifier-input",
+      "eire-individual-health-identifier-input",
       { id: "ihi", invalid: true, errormessage: "ihi-err" },
     );
     const el = document.querySelector("input");
@@ -45,17 +45,17 @@ describe("ireland-individual-health-identifier-input", () => {
 
   it("appends params.classes", () => {
     const { document } = render(
-      "ireland-individual-health-identifier-input",
+      "eire-individual-health-identifier-input",
       { id: "ihi", classes: "wide" },
     );
     expect(document.querySelector(
-      "input.ireland-individual-health-identifier-input.wide",
+      "input.eire-individual-health-identifier-input.wide",
     )).toBeTruthy();
   });
 
   it("contains no <style> or <script> tags", () => {
     const { html } = render(
-      "ireland-individual-health-identifier-input",
+      "eire-individual-health-identifier-input",
       { id: "ihi" },
     );
     expect(html).not.toContain("<style");

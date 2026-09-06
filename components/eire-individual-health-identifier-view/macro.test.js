@@ -1,38 +1,38 @@
 import { describe, it, expect } from "vitest";
 import { render } from "../../test/render.js";
 
-describe("northern-ireland-health-and-care-number-view", () => {
+describe("eire-individual-health-identifier-view", () => {
   it("renders a <span> with the base class", () => {
     const { document } = render(
-      "northern-ireland-health-and-care-number-view",
-      { value: "4857773456" },
+      "eire-individual-health-identifier-view",
+      { value: "1234567" },
     );
     expect(document.querySelector(
-      "span.northern-ireland-health-and-care-number-view",
+      "span.eire-individual-health-identifier-view",
     )).toBeTruthy();
   });
 
-  it("groups 10 raw digits as 'XXX XXX XXXX'", () => {
+  it("groups 7 raw digits as 'XXXX XXX'", () => {
     const { document } = render(
-      "northern-ireland-health-and-care-number-view",
-      { value: "4857773456" },
+      "eire-individual-health-identifier-view",
+      { value: "1234567" },
     );
     expect(document.querySelector("span").textContent.trim())
-      .toBe("485 777 3456");
+      .toBe("1234 567");
   });
 
   it("accepts embedded hyphens and regroups", () => {
     const { document } = render(
-      "northern-ireland-health-and-care-number-view",
-      { value: "485-777-3456" },
+      "eire-individual-health-identifier-view",
+      { value: "1234-567" },
     );
     expect(document.querySelector("span").textContent.trim())
-      .toBe("485 777 3456");
+      .toBe("1234 567");
   });
 
-  it("renders non-10-digit values as-is", () => {
+  it("renders non-7-digit values as-is", () => {
     const { document } = render(
-      "northern-ireland-health-and-care-number-view",
+      "eire-individual-health-identifier-view",
       { value: "pending" },
     );
     expect(document.querySelector("span").textContent.trim()).toBe("pending");
@@ -40,17 +40,17 @@ describe("northern-ireland-health-and-care-number-view", () => {
 
   it("sets aria-label from params.label", () => {
     const { document } = render(
-      "northern-ireland-health-and-care-number-view",
-      { value: "4857773456", label: "H&C number" },
+      "eire-individual-health-identifier-view",
+      { value: "1234567", label: "IHI" },
     );
     expect(document.querySelector("span").getAttribute("aria-label"))
-      .toBe("H&C number");
+      .toBe("IHI");
   });
 
   it("contains no <style> or <script> tags", () => {
     const { html } = render(
-      "northern-ireland-health-and-care-number-view",
-      { value: "4857773456" },
+      "eire-individual-health-identifier-view",
+      { value: "1234567" },
     );
     expect(html).not.toContain("<style");
     expect(html).not.toContain("<script");
